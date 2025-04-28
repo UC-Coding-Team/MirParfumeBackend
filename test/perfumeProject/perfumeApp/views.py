@@ -1,4 +1,4 @@
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView, CreateAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.views import APIView
 from .serializers import *
@@ -58,3 +58,9 @@ class ProductDetailAPIView(RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = 'slug'
+
+
+class ContactRequestCreateAPIView(CreateAPIView):
+    queryset = ContactRequest.objects.all()
+    serializer_class = ContactRequestSerializer
+

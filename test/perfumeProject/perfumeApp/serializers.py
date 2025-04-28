@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import *
 
-
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductImage
@@ -58,3 +57,10 @@ class ProductSerializer(serializers.ModelSerializer):
             return round(price)
         else:
             return product.price
+        
+
+class ContactRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactRequest
+        fields = ['id', 'name', 'phone', 'message', 'created_at']
+

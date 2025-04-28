@@ -84,3 +84,33 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = 'Фото товара'
         verbose_name_plural = 'Фото товаров'
+
+
+from .utils.telegram import send_telegram_message
+
+class ContactRequest(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя')
+    phone = models.CharField(max_length=20, verbose_name='Телефон')
+    message = models.TextField(blank=True, null=True, verbose_name='Сообщение')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        super().save(*args, **kwargs)
+        if is_new:
+            text = (
+                f"<b>Новая заявка с сайта!</b>\n\n"
+                f"👤 Имя: {self.name}\n"
+                f"📞 Телефон: {self.phone}\n"
+                f"📝 Сообщение: {self.message or 'Нет сообщения.'}"
+            )
+            send_telegram_message(text)
+
+    def __str__(self):
+        return f"{self.name} - {self.phone}"
+
+    class Meta:
+        verbose_name = 'Заявка на обратную связь'
+        verbose_name_plural = 'Заявки на обратную связь'
+
+
