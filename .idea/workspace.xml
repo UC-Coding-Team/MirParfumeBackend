@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d59a6007-1f5a-43b9-aae4-8eb66219a684" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/test/perfumeProject/perfumeApp/utils/telegram.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/perfumeProject/perfumeApp/utils/telegram.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumeProject/.env_example" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +15,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2wLxNB5cPkJpsnKPEOA7ZwfapLT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,7 +27,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "shakhzod"
+    "git-widget-placeholder": "final"
   }
 }]]></component>
   <component name="SharedIndexes">
