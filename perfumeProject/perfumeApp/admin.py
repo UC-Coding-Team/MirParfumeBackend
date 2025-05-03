@@ -11,7 +11,7 @@ class CategoryAdmin(TranslationAdmin):
     list_display = ['id', 'name', 'get_icon_admin'] 
     list_display_links = ['id', 'name']
     prepopulated_fields = {'slug': ('name',)}
-    form = CategoryForm
+    form = CategoryForm  
 
     def get_icon_admin(self, obj):
         if obj.icon:
