@@ -6,9 +6,13 @@ from telegram.ext import Application, CallbackQueryHandler, ContextTypes, Comman
 from telegram.constants import ParseMode
 from perfumeApp.models import PendingOrders, Product
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BOT_TOKEN = settings.TELEGRAM_BOT_TOKEN
-GROUP_ID = -4636303626
+GROUP_ID = os.getenv('GROUP_ID')
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
